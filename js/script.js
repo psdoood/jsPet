@@ -5,28 +5,39 @@ hunger = 5
 love = 5
 
 function updateStats(){
-    $("#sleep").text("sleep: " + sleepiness);
-    $("#play").text("play: " + fun);
-    $("#feed").text("feed: " + hunger);
-    $("#pet").text("pet: " + love);
+    $("#sleep-lvl").text("Sleepy Level: " + sleepiness);
+    $("#play-lvl").text("Fun Level: " + fun);
+    $("#feed-lvl").text("Hunger Level: " + hunger);
+    $("#pet-lvl").text("Love Level: " + love);
 }
 
 $("#feed").click(function(){
-
+    if(hunger < 10){
+        hunger++;
+        updateStats();
+    }
 });
 
 $("#play").click(function(){
-
+    if(fun < 10){
+        fun++;
+        updateStats();
+    }
 });
 
 $("#sleep").click(function(){
-
+    if(sleepiness < 10){
+        sleepiness++;
+        updateStats();
+    }
 });
 
 $("#pet").click(function(){
-
+    if(love < 10){
+        love++;
+        updateStats();
+    }
 });
-
 
 setInterval(function(){
     if(sleepiness > 0){
@@ -42,4 +53,4 @@ setInterval(function(){
         love--
     }
     updateStats();
-}, 2000);
+}, 1500);

@@ -11,3 +11,11 @@ body {
 h1 {
     font-size: 100px;
 }
+
+#pet-box{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+
