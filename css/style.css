@@ -6,6 +6,7 @@ body {
     margin: 0;
     background: black;
     color: white;
+    font-family: "Syne Mono", monospace;
 }
 
 h1 {
@@ -21,7 +22,7 @@ h2 {
 button {
     padding: 6px 10px;
     font-size: 20px;
-    width: 120px;
+    width: 125px;
 }
 
 #pet-box{
@@ -36,5 +37,6 @@ button {
     padding: 60px 80px;
     border-radius: 20px;
 }
+
 
 
