@@ -43,49 +43,39 @@ function updatePet(buttonClicked){
         $("#pet-face").text("＼(⁀ᗢ⁀)/");
     }
 
-    if(buttonClicked == "#feed"){
-        $("#feed").text("feed + 1");
-        setTimeout(function(){$("#feed").text("feed")}, 500);
-    }
-    else if(buttonClicked == "#play"){
-        $("#play").text("play + 1");
-        setTimeout(function(){$("#play").text("play")}, 500);
-    }
-    else if(buttonClicked == "#sleep"){
-        $("#sleep").text("sleep + 1");
-        setTimeout(function(){$("#sleep").text("sleep")}, 500);
-    } 
-    else if(buttonClicked == "#pet"){
-        $("#pet").text("pet + 1");
-        setTimeout(function(){$("#pet").text("pet")}, 500);
-    }
+    plusOne(buttonClicked);    
+}
+
+function plusOne(buttonClicked){
+    $("#" + buttonClicked).text(buttonClicked + " + 1");
+    setTimeout(function(){$("#" + buttonClicked).text(buttonClicked)}, 500);
 }
 
 $("#feed").click(function(){
     if(hunger < 10){
         hunger++;
-        updatePet("#feed");
+        updatePet("feed");
     }
 });
 
 $("#play").click(function(){
     if(fun < 10){
         fun++;
-        updatePet("#play");
+        updatePet("play");
     }
 });
 
 $("#sleep").click(function(){
     if(sleepiness < 10){
         sleepiness++;
-        updatePet("#sleep");
+        updatePet("sleep");
     }
 });
 
 $("#pet").click(function(){
     if(love < 10){
         love++;
-        updatePet("#pet");
+        updatePet("pet");
     }
 });
 
