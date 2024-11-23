@@ -14,12 +14,12 @@ function updatePet(){
     avgStat = (sleepiness + fun + hunger + love) / 4
 
     if(avgStat == 0){
-        $("#pet-face").text("(x_x)");
+        $("#pet-face").text("(ｘ＿ｘ)");
     }
     else if(avgStat <= 2){
         $("#pet-face").text("(╥﹏╥)");
     }
-    else if(avgStat <= 5){
+    else if(avgStat <= 4){
         if(lowestStat == sleepiness){
             $("#pet-face").text("(－_－) zzZ");
         }
@@ -27,16 +27,16 @@ function updatePet(){
             $("#pet-face").text("╮(￣_￣)╭");
         }
         else if(lowestStat == hunger){
-            $("#pet-face").text("(￣︿￣)");
+            $("#pet-face").text("(￣o￣)");
         }
         else{
-            $("#pet-face").text("(T_T)");
+            $("#pet-face").text("(. _ .)");
         }
     }
     else if(avgStat <= 6){
         $("#pet-face").text("(◕‿◕)");
     }
-    else if(avgStat <= 8){
+    else if(avgStat <= 7){
         $("#pet-face").text("٩(◕‿◕｡)۶");
     }
     else{
@@ -86,4 +86,4 @@ setInterval(function(){
         love--
     }
     updatePet();
-}, 2000);
+}, 2500);
