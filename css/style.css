@@ -21,6 +21,7 @@ h2 {
 button {
     padding: 6px 10px;
     font-size: 20px;
+    width: 120px;
 }
 
 #pet-box{

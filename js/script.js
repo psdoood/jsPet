@@ -4,7 +4,7 @@ fun = 5
 hunger = 5
 love = 5
 
-function updatePet(){
+function updatePet(buttonClicked){
     $("#sleep-lvl").text("Sleepy Level: " + sleepiness);
     $("#play-lvl").text("Fun Level: " + fun);
     $("#feed-lvl").text("Hunger Level: " + hunger);
@@ -42,33 +42,50 @@ function updatePet(){
     else{
         $("#pet-face").text("＼(⁀ᗢ⁀)/");
     }
+
+    if(buttonClicked == "#feed"){
+        $("#feed").text("feed + 1");
+        setTimeout(function(){$("#feed").text("feed")}, 500);
+    }
+    else if(buttonClicked == "#play"){
+        $("#play").text("play + 1");
+        setTimeout(function(){$("#play").text("play")}, 500);
+    }
+    else if(buttonClicked == "#sleep"){
+        $("#sleep").text("sleep + 1");
+        setTimeout(function(){$("#sleep").text("sleep")}, 500);
+    } 
+    else if(buttonClicked == "#pet"){
+        $("#pet").text("pet + 1");
+        setTimeout(function(){$("#pet").text("pet")}, 500);
+    }
 }
 
 $("#feed").click(function(){
     if(hunger < 10){
         hunger++;
-        updatePet();
+        updatePet("#feed");
     }
 });
 
 $("#play").click(function(){
     if(fun < 10){
         fun++;
-        updatePet();
+        updatePet("#play");
     }
 });
 
 $("#sleep").click(function(){
     if(sleepiness < 10){
         sleepiness++;
-        updatePet();
+        updatePet("#sleep");
     }
 });
 
 $("#pet").click(function(){
     if(love < 10){
         love++;
-        updatePet();
+        updatePet("#pet");
     }
 });
 
