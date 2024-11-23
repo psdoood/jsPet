@@ -4,38 +4,71 @@ fun = 5
 hunger = 5
 love = 5
 
-function updateStats(){
+function updatePet(){
     $("#sleep-lvl").text("Sleepy Level: " + sleepiness);
     $("#play-lvl").text("Fun Level: " + fun);
     $("#feed-lvl").text("Hunger Level: " + hunger);
     $("#pet-lvl").text("Love Level: " + love);
+
+    lowestStat = Math.min(sleepiness, fun, hunger, love);
+    avgStat = (sleepiness + fun + hunger + love) / 4
+
+    if(avgStat == 0){
+        $("#pet-face").text("(x_x)");
+    }
+    else if(avgStat <= 2){
+        $("#pet-face").text("(╥﹏╥)");
+    }
+    else if(avgStat <= 5){
+        if(lowestStat == sleepiness){
+            $("#pet-face").text("(－_－) zzZ");
+        }
+        else if(lowestStat == fun){
+            $("#pet-face").text("╮(￣_￣)╭");
+        }
+        else if(lowestStat == hunger){
+            $("#pet-face").text("(￣︿￣)");
+        }
+        else{
+            $("#pet-face").text("(T_T)");
+        }
+    }
+    else if(avgStat <= 6){
+        $("#pet-face").text("(◕‿◕)");
+    }
+    else if(avgStat <= 8){
+        $("#pet-face").text("٩(◕‿◕｡)۶");
+    }
+    else{
+        $("#pet-face").text("＼(⁀ᗢ⁀)/");
+    }
 }
 
 $("#feed").click(function(){
     if(hunger < 10){
         hunger++;
-        updateStats();
+        updatePet();
     }
 });
 
 $("#play").click(function(){
     if(fun < 10){
         fun++;
-        updateStats();
+        updatePet();
     }
 });
 
 $("#sleep").click(function(){
     if(sleepiness < 10){
         sleepiness++;
-        updateStats();
+        updatePet();
     }
 });
 
 $("#pet").click(function(){
     if(love < 10){
         love++;
-        updateStats();
+        updatePet();
     }
 });
 
@@ -52,5 +85,5 @@ setInterval(function(){
     if(love > 0){
         love--
     }
-    updateStats();
-}, 1500);
+    updatePet();
+}, 2000);
